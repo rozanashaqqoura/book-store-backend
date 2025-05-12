@@ -25,8 +25,8 @@ app.use(helmet());
 app.use(cors())
 
 /// middlewares routes
-app.use('/' ,bookrouter )
 app.use('/aouther' , aoutherrouter)
+app.use('/' ,bookrouter )
 app.use('/' , authpath)
 app.use('/' , userrouter )
 app.use('/' , require('./router/password'))
@@ -37,6 +37,9 @@ app.use("/", require("./router/paymentRoutes"));
 
 
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Book Store Backend");
+});
 
 
 //Error Handlers Middleware
